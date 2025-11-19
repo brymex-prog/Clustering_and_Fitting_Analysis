@@ -10,7 +10,6 @@ import numpy as np
 import pandas as pd
 import scipy.stats as ss
 import seaborn as sns
-import re
 
 # additional imports needed for clustering/fitting
 from sklearn.cluster import KMeans

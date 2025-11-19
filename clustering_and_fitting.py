@@ -311,7 +311,7 @@ def main():
 
     if "price" in df.columns:
     chosen_col = "price"
-else:
+    else:
     chosen_col = df.select_dtypes(include=[np.number]).columns[0]
 
 

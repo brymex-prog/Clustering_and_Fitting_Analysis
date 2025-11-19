@@ -309,7 +309,11 @@ def main():
     df = pd.read_csv("data.csv")
     df = preprocessing(df)
 
-    chosen_col = "price" if "price" in df.columns else df.select_dtypes(include=[np.number]).columns[0]
+    if "price" in df.columns:
+    chosen_col = "price"
+else:
+    chosen_col = df.select_dtypes(include=[np.number]).columns[0]
+
 
     plot_relational_plot(df)
     plot_statistical_plot(df)

@@ -323,8 +323,16 @@ def main():
     writing(moments, chosen_col)
 
     # clustering: pick two features
-    cluster_x = "mileage" if "mileage" in df.columns else df.select_dtypes(include=[np.number]).columns[0]
-    cluster_y = "horsepower" if "horsepower" in df.columns else df.select_dtypes(include=[np.number]).columns[1]
+    if "mileage" in df.columns:
+        cluster_x = "mileage"
+    else:
+        cluster_x = df.select_dtypes(include=[np.number]).columns[0]
+
+    if "horsepower" in df.columns:
+        cluster_y = "horsepower"
+    else:
+        cluster_y = df.select_dtypes(include=[np.number]).columns[1]
+
     clustering_results = perform_clustering(df, cluster_x, cluster_y)
     plot_clustered_data(*clustering_results)
 

@@ -310,9 +310,9 @@ def main():
     df = preprocessing(df)
 
     if "price" in df.columns:
-    chosen_col = "price"
+        chosen_col = "price"
     else:
-    chosen_col = df.select_dtypes(include=[np.number]).columns[0]
+        chosen_col = df.select_dtypes(include=[np.number]).columns[0]
 
 
     plot_relational_plot(df)

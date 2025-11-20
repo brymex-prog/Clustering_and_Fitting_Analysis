@@ -301,6 +301,19 @@ def main():
     df = pd.read_csv("data.csv")
     df = preprocessing(df)
 
+    # Quick inspection features
+    print("\n===== FIRST 5 ROWS (head) =====")
+    print(df.head())
+
+    print("\n===== LAST 5 ROWS (tail) =====")
+    print(df.tail())
+
+    print("\n===== SUMMARY STATISTICS (describe) =====")
+    print(df.describe(include="all"))
+
+    print("\n===== CORRELATION MATRIX (corr) =====")
+    print(df.corr(numeric_only=True))
+
     if "price" in df.columns:
         chosen_col = "price"
     else:

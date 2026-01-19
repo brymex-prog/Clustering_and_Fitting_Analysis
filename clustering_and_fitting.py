@@ -2,7 +2,6 @@
 Author: Ibrahim Olayinka Abdulsalam
 Clustering and Fitting Project 
 Completed code using the Used Car Price Prediction Dataset.
-Dataset renamed to data.csv as instructed.
 """
 
 import matplotlib.pyplot as plt
